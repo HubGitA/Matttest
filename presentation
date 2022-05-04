@@ -1,0 +1,33 @@
+
+ALTER TABLE [E_2]
+DROP CONSTRAINT [XPKE_2]
+go
+
+execute sp_rename '[E_2]', 'E_265494128000'
+go
+
+CREATE TABLE [E_2]
+( 
+	[s]                  char(18)  NOT NULL ,
+	[a]                  char(18)  NOT NULL 
+)
+go
+
+ALTER TABLE [E_2]
+ADD CONSTRAINT [XPKE_2] PRIMARY KEY  CLUSTERED ([s] ASC,[a] ASC)
+go
+
+
+INSERT INTO [E_2] ([s]) SELECT [s] FROM E_265494128000
+
+go
+
+ALTER TABLE [E_2]
+	ADD CONSTRAINT [R_1] FOREIGN KEY ([a]) REFERENCES [E_1]([a])
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+go
+
+
+DROP TABLE E_265494128000
+go
