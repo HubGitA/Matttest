@@ -1,1 +1,30 @@
-Hello Testing
+
+CREATE TABLE [E_12]
+( 
+	[s]                  char(18)  NOT NULL 
+)
+go
+
+CREATE TABLE [E_13]
+( 
+	[x]                  char(18)  NOT NULL 
+)
+go
+
+CREATE TABLE [TEST]
+( 
+	[q]                  char(18)  NOT NULL 
+)
+go
+
+ALTER TABLE [E_12]
+	ADD CONSTRAINT [XPKE_12] PRIMARY KEY  CLUSTERED ([s] ASC)
+go
+
+ALTER TABLE [E_13]
+	ADD CONSTRAINT [XPKE_13] PRIMARY KEY  CLUSTERED ([x] ASC)
+go
+
+ALTER TABLE [TEST]
+	ADD CONSTRAINT [XPKTEST] PRIMARY KEY  CLUSTERED ([q] ASC)
+go
