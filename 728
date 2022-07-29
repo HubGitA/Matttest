@@ -60,3 +60,29 @@ go
 ALTER TABLE [E_14]
 ADD CONSTRAINT [XPKE_14] PRIMARY KEY  CLUSTERED ([q] ASC)
 go
+
+
+ALTER TABLE [E_12]
+ADD [q]  char(18)  NULL
+go
+
+CREATE TABLE [E_13]
+( 
+	[d]                  char(18)  NOT NULL ,
+	[s]                  char(18)  NULL 
+)
+go
+
+CREATE TABLE [E_14]
+( 
+	[q]                  char(18)  NOT NULL 
+)
+go
+
+ALTER TABLE [E_13]
+ADD CONSTRAINT [XPKE_13] PRIMARY KEY  CLUSTERED ([d] ASC)
+go
+
+ALTER TABLE [E_14]
+ADD CONSTRAINT [XPKE_14] PRIMARY KEY  CLUSTERED ([q] ASC)
+go
